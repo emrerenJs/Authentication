@@ -4,8 +4,6 @@ import { CreateUserPayload } from "./user.schema";
 import { createUser } from "./user.service";
 import config from "config";
 
-const email = config.get<string>("smtp");
-
 export const createUserHandler = async (
   req: Request<{}, {}, CreateUserPayload>,
   res: Response
@@ -14,7 +12,7 @@ export const createUserHandler = async (
   try {
     const createdUser = await createUser(user);
     await sendMail({
-      from: `${email}`,
+      from: `test@example.com`,
       to: user.email,
       subject: `Please verify your account`,
       text: `Verification code ${createdUser.verificationCode}. Id: ${createdUser._id}`,
