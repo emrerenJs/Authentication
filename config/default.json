@@ -1,0 +1,14 @@
+{
+  "port": 3000,
+  "dbUri": "mongodb://localhost:27017/authentication_db",
+
+  "logLevel": "info",
+
+  "smtp": {
+    "user": "shx54uacx2p4mdm5@ethereal.email",
+    "pass": "KgM8jxEXZ1q4TuQDte",
+    "host": "smtp.etheral.email",
+    "port": 587,
+    "secure": false
+  }
+}
